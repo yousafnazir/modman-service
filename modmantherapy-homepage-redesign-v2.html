@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Therapy for the Modern Man | Homepage Mockup v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDFBF7;
+  --sand:#F2EEE8;
+  --beige:#E5DFD4;
+  --slate:#4A5461;
+  --navy:#1A2533;
+  --accent:#3A4D6E;
+  --paleblue:#D9E1F0;
+  --lavender:#E6E2F5;
+  --tan:#F0E9D9;
+  --wrap:1280px;
+  --gut:clamp(22px,5vw,64px);
+  --r:16px;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --text:'Wix Madefor Text',-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--slate);
+  font-family:var(--text);font-size:18px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{
+  font-family:var(--display);color:var(--navy);margin:0;
+  font-variation-settings:'opsz' 120;letter-spacing:-.01em;font-weight:600;
+}
+h1{font-size:clamp(2.7rem,6.4vw,5rem);line-height:1.04;letter-spacing:-.025em}
+h2{font-size:clamp(2rem,4.4vw,3.35rem);line-height:1.1;letter-spacing:-.018em}
+h3{font-size:clamp(1.25rem,1.9vw,1.6rem);line-height:1.25}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.sec{padding:clamp(64px,9vw,124px) 0}
+.eyebrow{
+  font-family:var(--text);font-size:.76rem;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  display:block;
+}
+.eyebrow--loud{
+  display:inline-block;
+  font-size:clamp(1.12rem,1.7vw,1.35rem);
+  letter-spacing:.18em;
+  font-weight:700;
+  color:var(--navy);
+  background:none;
+  border:0;
+  padding:0 0 10px;
+  border-radius:0;
+  border-bottom:3px solid var(--navy);
+}
+.lede{font-size:clamp(1.08rem,1.5vw,1.32rem);line-height:1.6;color:var(--slate)}
+.sand{background:var(--sand)}
+.center{text-align:center}
+.head{max-width:780px;margin:0 auto clamp(44px,6vw,78px);text-align:center}
+.head .eyebrow{margin-bottom:18px}
+.head p{margin-top:22px}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--text);font-size:1rem;font-weight:600;
+  padding:17px 36px;border-radius:999px;border:1.5px solid transparent;
+  transition:.22s ease;cursor:pointer;white-space:nowrap;
+}
+.btn--solid{background:var(--accent);color:#fff}
+.btn--solid:hover{background:var(--navy)}
+.btn--ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn--ghost:hover{background:var(--navy);color:#fff}
+.btn--light{background:#fff;color:var(--navy);box-shadow:0 2px 10px rgba(26,37,51,.07)}
+.btn--light:hover{background:var(--navy);color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.tlink{
+  font-family:var(--text);font-weight:600;font-size:1.05rem;color:var(--accent);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.tlink svg{transition:transform .2s ease}
+.tlink:hover svg{transform:translateX(5px)}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:60;background:rgba(253,251,247,.9);
+  backdrop-filter:blur(14px);border-bottom:1px solid rgba(229,223,212,.8);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:96px}
+.logo img{height:62px;width:auto}
+.nav__links{display:flex;gap:36px;font-size:1.18rem;font-weight:500;color:var(--navy)}
+.nav__links a:hover{color:var(--accent)}
+.burger{display:none;background:none;border:0;padding:10px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px}
+
+/* ===== HERO : photo + light overlay, navy type ===== */
+.hero{
+  position:relative;isolation:isolate;
+  min-height:clamp(560px,88vh,880px);
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;
+}
+.hero__bg{position:absolute;inset:0;z-index:-2}
+.hero__bg picture,.hero__bg img{width:100%;height:100%;display:block}
+.hero__bg img{object-fit:cover;object-position:center 18%}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:rgba(253,251,247,.58);
+}
+.hero .eyebrow{color:#1A2533}
+.hero h1{color:#1A2533;margin:22px 0 24px}
+.hero__inner{max-width:900px;padding:clamp(80px,11vw,130px) var(--gut)}
+.hero__sub{
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(1.2rem,2.1vw,1.65rem);color:#1A2533;margin-bottom:20px;
+}
+.hero p.lede{max-width:660px;margin:0 auto;color:#1A2533}
+.hero .btns{justify-content:center;margin-top:38px}
+.hero .btn--ghost{border-color:#1A2533;color:#1A2533}
+.hero__meta{
+  margin-top:34px;font-size:.86rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:#1A2533;
+}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.split__media img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:var(--r)}
+.split h2{margin:20px 0 22px}
+.split p+p{margin-top:18px}
+.split .btns{margin-top:32px}
+
+/* ===== 01 numbered hairline list (What brings people here) ===== */
+.rows{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(32px,4.5vw,64px)}
+.row{padding:34px 0;border-top:1px solid var(--beige)}
+.row__n{
+  font-family:var(--display);font-size:1.05rem;font-weight:600;color:var(--accent);
+  display:block;margin-bottom:14px;letter-spacing:.02em;
+}
+.row h3{margin-bottom:12px;font-size:clamp(1.35rem,2.2vw,1.75rem)}
+.row p{font-size:1.12rem}
+
+/* ===== pale-blue expectations band ===== */
+.band{background:var(--paleblue)}
+.band .head p{color:var(--accent)}
+.expect{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.exp{padding:0 clamp(14px,2vw,28px);border-left:1px solid rgba(58,77,110,.2)}
+.exp:first-child{border-left:0;padding-left:0}
+.exp:last-child{padding-right:0}
+.exp__n{
+  font-family:var(--display);font-size:clamp(2.4rem,4vw,3.4rem);font-weight:600;
+  color:var(--navy);line-height:1;display:block;margin-bottom:16px;
+}
+.exp h3{font-size:clamp(1.1rem,1.6vw,1.35rem);margin-bottom:11px}
+.exp p{font-size:.99rem;color:var(--accent)}
+
+/* service cards */
+.grid{display:grid;gap:clamp(18px,2.2vw,28px)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.svc{
+  background:#fff;border:1px solid var(--beige);border-radius:var(--r);
+  overflow:hidden;display:flex;flex-direction:column;transition:.22s ease;
+}
+.svc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,37,51,.08)}
+.svc__thumb{
+  aspect-ratio:1/1;height:auto;background:var(--sand);overflow:hidden;position:relative;
+}
+.svc__thumb img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center top;
+}
+.svc__body{padding:clamp(24px,2.4vw,32px);display:flex;flex-direction:column;gap:13px;flex:1}
+.svc__body p{font-size:1rem;flex:1}
+
+/* about */
+.about{
+  background:#fff;border:1px solid var(--beige);border-radius:22px;
+  display:grid;grid-template-columns:.85fr 1.15fr;overflow:hidden;
+}
+.about__media img{width:100%;height:100%;min-height:420px;object-fit:cover}
+.about__text{padding:clamp(32px,4.2vw,62px)}
+.about__text h2{margin:18px 0 22px}
+.about__text p+p{margin-top:18px}
+.about__list{
+  list-style:none;margin:28px 0 0;padding:26px 0 0;border-top:1px solid var(--beige);
+  display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;
+}
+.about__list li{font-size:.98rem;display:flex;gap:11px;align-items:flex-start;color:var(--navy)}
+.about__list li svg{flex:0 0 auto;margin-top:6px}
+.about .btns{margin-top:30px}
+
+/* location band */
+.loc{
+  background:var(--tan);border-radius:22px;padding:clamp(32px,4.6vw,62px);
+  display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(32px,4vw,56px);align-items:center;
+}
+.loc h2{margin:18px 0 20px}
+.loc__areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.tag{
+  background:rgba(255,255,255,.8);border:1px solid rgba(26,37,51,.08);
+  border-radius:999px;padding:9px 19px;font-size:.92rem;font-weight:500;color:var(--navy);
+}
+
+/* insights */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(32px,4.5vw,64px)}
+.post{padding-top:30px;border-top:2px solid var(--navy)}
+.post h3{margin-bottom:14px}
+.post p{font-size:1rem}
+.post .tlink{margin-top:20px}
+
+/* faq */
+.faq{max-width:900px;margin:0 auto}
+details{border-bottom:1px solid var(--beige)}
+details:first-child{border-top:1px solid var(--beige)}
+summary{
+  list-style:none;cursor:pointer;padding:26px 46px 26px 0;position:relative;
+  font-family:var(--display);font-weight:600;font-size:clamp(1.08rem,1.6vw,1.3rem);
+  color:var(--navy);line-height:1.35;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;
+  border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);
+  transform:translateY(-70%) rotate(45deg);transition:.2s ease;
+}
+details[open] summary{color:var(--accent)}
+details[open] summary::after{transform:translateY(-25%) rotate(-135deg)}
+details .ans{padding:0 60px 30px 0;font-size:1.05rem}
+details .ans p+p{margin-top:16px}
+
+/* cta */
+.cta{background:var(--lavender);padding:clamp(70px,10vw,130px) 0;text-align:center}
+.cta .wrap{max-width:840px}
+.cta p{margin-top:22px}
+.cta .btns{justify-content:center;margin-top:36px}
+.cta .fine{margin-top:24px;font-size:.95rem}
+
+/* footer */
+footer{background:var(--navy);color:#C4CFDD;padding:clamp(54px,7vw,86px) 0 34px;font-size:.98rem}
+footer h4{
+  color:#fff;font-family:var(--text);font-size:.78rem;letter-spacing:.18em;
+  text-transform:uppercase;margin-bottom:20px;font-weight:600;
+}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:clamp(30px,4vw,54px)}
+.foot a:hover{color:#fff}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.foot__logo{height:46px;width:auto;filter:brightness(0) invert(1);margin-bottom:22px}
+.foot__bar{
+  border-top:1px solid rgba(255,255,255,.14);margin-top:clamp(38px,5vw,60px);padding-top:26px;
+  display:grid;grid-template-columns:auto 1fr;gap:16px 40px;font-size:.86rem;color:#8B99AD;
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:1024px){
+  .nav__links{display:none}
+  .burger{display:block}
+  .split,.about,.loc{grid-template-columns:1fr}
+  .about__media img{min-height:300px}
+  .rows,.posts{grid-template-columns:repeat(2,1fr)}
+  .expect{grid-template-columns:repeat(3,1fr);gap:34px 0}
+  .exp{padding:0 22px}
+  .exp:nth-child(4){border-left:0;padding-left:0}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  body{font-size:17px}
+  .nav{height:80px}
+  .logo img{height:50px}
+  .hero{min-height:auto}
+  .hero__inner{padding:96px var(--gut) 84px}
+  .hero__bg img{object-position:center 22%}
+  .hero .btns .btn,.cta .btns .btn,.loc .btn{width:100%}
+  .rows,.posts,.g3,.expect{grid-template-columns:1fr}
+  .row{padding:26px 0}
+  .expect{gap:0}
+  .exp{border-left:0;border-top:1px solid rgba(58,77,110,.2);padding:26px 0 0}
+  .exp:first-child{border-top:0;padding-top:0}
+  .exp__n{margin-bottom:10px}
+  .about__list{grid-template-columns:1fr}
+  .details .ans,details .ans{padding-right:0}
+  summary{padding:22px 40px 22px 0}
+  .foot{grid-template-columns:1fr}
+  .foot__bar{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Therapy for the Modern Man">
+      <img src="https://static.wixstatic.com/media/7fd722_4b97e9d0876444bd88195a8df0fc2103~mv2.png/v1/fill/w_560,h_225,al_c,q_90,enc_auto/7fd722_4b97e9d0876444bd88195a8df0fc2103~mv2.png" alt="Therapy for the Modern Man">
+    </a>
+    <nav class="nav__links">
+      <a href="#approach">Approach</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#insights">Insights</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="btn btn--solid" href="#contact">Free Consultation</a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO : full-bleed background, centred text ============ -->
+<section class="hero" id="top">
+  <div class="hero__bg">
+    <picture>
+      <source srcset="7fd722_6f025d31941a4a519caf1142131ac66e~mv2.avif" type="image/avif">
+      <img src="https://static.wixstatic.com/media/7fd722_6f025d31941a4a519caf1142131ac66e~mv2.avif" alt="Men talking together outdoors">
+    </picture>
+  </div>
+  <div class="hero__inner">
+    <span class="eyebrow">In-Person Therapy in Austin, Texas</span>
+    <h1>Therapy for the<br>Modern Man</h1>
+    <p class="hero__sub">A more direct, practical approach to therapy.</p>
+    <p class="lede">Thoughtful, affirming support for men, teens, LGBTQ+ and trans clients navigating anxiety, relationships, identity, and the transitions that come with modern life.</p>
+    <div class="btns">
+      <a class="btn btn--solid" href="#contact">Schedule a Free Consultation</a>
+      <a class="btn btn--ghost" href="#services">Explore Services</a>
+    </div>
+    <p class="hero__meta">James Bain, LMSW, MBA &middot; Austin, TX</p>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section class="sec sand" id="approach">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">The Practice</span>
+      <h2>Therapy That Feels Relevant to Your Life</h2>
+      <p class="lede">Therapy does not have to feel clinical, distant, or disconnected from the life you are actually living.</p>
+      <p>Sometimes you know exactly what is bothering you. Other times, things simply feel harder than they should &mdash; a relationship you are questioning, anxiety that will not settle, or the sense that the way you have always handled things is no longer working.</p>
+      <p>This is a place to have honest conversations, understand what is happening beneath the surface, and work toward change that feels practical and personal.</p>
+      <div class="btns"><a class="btn btn--ghost" href="#about">Explore Our Approach</a></div>
+    </div>
+    <div class="split__media">
+      <img src="https://static.wixstatic.com/media/7fd722_99845fa2381a44fbba10ef0011dec34a~mv2.png/v1/fill/w_1000,h_800,al_c,q_90,enc_auto/7fd722_99845fa2381a44fbba10ef0011dec34a~mv2.png" alt="Man outdoors looking ahead">
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT BRINGS PEOPLE HERE ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow eyebrow--loud">What Brings People Here</span>
+      <h2>When Life Feels Harder Than It Looks</h2>
+      <p class="lede">People rarely arrive with everything figured out. Often they simply know something needs attention.</p>
+    </div>
+    <div class="rows">
+      <div class="row"><span class="row__n">01</span><h3>Anxiety &amp; Overthinking</h3><p>Your mind rarely switches off. You replay conversations and stay a step ahead of everything.</p></div>
+      <div class="row"><span class="row__n">02</span><h3>Isolation &amp; Disconnection</h3><p>You can have people around you and still feel alone or misunderstood.</p></div>
+      <div class="row"><span class="row__n">03</span><h3>Relationships &amp; Communication</h3><p>The same patterns keep showing up &mdash; withdrawing, defending, repeating the same conflict.</p></div>
+      <div class="row"><span class="row__n">04</span><h3>Identity &amp; Self-Worth</h3><p>Confidence, masculinity, sexuality, gender, belonging &mdash; and the person you are becoming.</p></div>
+      <div class="row"><span class="row__n">05</span><h3>Life Transitions</h3><p>Relationships change. Careers shift. What got you here may not fit where you are going.</p></div>
+      <div class="row"><span class="row__n">06</span><h3>Career &amp; Life Direction</h3><p>Rethinking success, changing roles, or deciding what you actually want next.</p></div>
+    </div>
+    <p class="center lede" style="margin-top:clamp(38px,4vw,58px)">You do not need a perfect explanation before reaching out.</p>
+    <div class="btns" style="justify-content:center;margin-top:28px">
+      <a class="btn btn--solid" href="#contact">Schedule a Free Consultation</a>
+      <a class="btn btn--ghost" href="#services">See How We Can Help</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec sand" id="services">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow eyebrow--loud">Services</span>
+      <h2>Focused Support. Different Ways to Begin.</h2>
+    </div>
+    <div class="grid g3">
+
+      <article class="svc">
+        <div class="svc__thumb"><img src="https://static.wixstatic.com/media/7fd722_cd4321ac765d4b8891c14def0e7aaaf9~mv2.png" alt="Individual counseling session"></div>
+        <div class="svc__body">
+          <h3>Individual Counseling</h3>
+          <p>One-to-one work on anxiety, relationships, identity, confidence, isolation, and life transitions &mdash; shaped around you and your goals.</p>
+          <a class="tlink" href="modmantherapy-therapy-for-men-austin.html">Explore Individual Counseling <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc__thumb"><img src="https://static.wixstatic.com/media/7fd722_da1bfa8bc102420f9ffb1820a6fa8ddc~mv2.jpg" alt="Teen therapy"></div>
+        <div class="svc__body">
+          <h3>Teen Therapy</h3>
+          <p>A supportive space for teens navigating school, family, identity, relationships, and growing independence. All genders, ages 13&ndash;20.</p>
+          <a class="tlink" href="#contact">Explore Teen Therapy <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc__thumb"><img src="https://static.wixstatic.com/media/7fd722_c336cd923c3845e8b1b28c56d52a0b26~mv2.jpg" alt="Men's group therapy"></div>
+        <div class="svc__body">
+          <h3>Men&rsquo;s Group Therapy</h3>
+          <p>A structured space to talk honestly about relationships, masculinity, isolation, and the things men often carry privately.</p>
+          <a class="tlink" href="#contact">Explore Men&rsquo;s Groups <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc__thumb"><img src="https://static.wixstatic.com/media/7fd722_96e00af91cb14e23a40dcffcdd4787ae~mv2.jpg" alt="LGBTQ+ therapy"></div>
+        <div class="svc__body">
+          <h3>LGBTQ+ Therapy</h3>
+          <p>Affirming support for relationships, identity, anxiety, self-worth, family dynamics, and living authentically.</p>
+          <a class="tlink" href="#contact">Explore LGBTQ+ Therapy <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc__thumb"><img src="https://static.wixstatic.com/media/5c7dc6_d6d1c32817624265b8b59bacfdf360bd~mv2.png" alt="Trans-affirming therapy"></div>
+        <div class="svc__body">
+          <h3>Trans-Affirming Therapy</h3>
+          <p>A respectful space for transgender and gender-diverse clients. The focus is the person &mdash; not treating identity as a problem.</p>
+          <a class="tlink" href="#contact">Explore Trans-Affirming Therapy <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+
+      <article class="svc">
+        <div class="svc__thumb"><img src="https://static.wixstatic.com/media/nsplsh_dfc2f4ed59144fd79eb2fe4aa9c27421~mv2.jpg" alt="Career and executive coaching"></div>
+        <div class="svc__body">
+          <h3>Career Coaching</h3>
+          <p>Support for career decisions, professional transitions, leadership challenges, and what you want from the next stage of work.</p>
+          <a class="tlink" href="#contact">Explore Career Coaching <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU CAN EXPECT — pale-blue numbered band ============ -->
+<section class="sec band">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow eyebrow--loud">What You Can Expect</span>
+      <h2>Direct. Practical. Personal.</h2>
+    </div>
+    <div class="expect">
+      <div class="exp"><span class="exp__n">1</span><h3>Direct</h3><p>Honest, straightforward conversation &mdash; not buried in clinical language.</p></div>
+      <div class="exp"><span class="exp__n">2</span><h3>Practical</h3><p>Insight matters, but the work should change how you actually respond.</p></div>
+      <div class="exp"><span class="exp__n">3</span><h3>Personal</h3><p>No universal formula. Therapy reflects the person in the room.</p></div>
+      <div class="exp"><span class="exp__n">4</span><h3>Affirming</h3><p>You should not have to defend who you are before you begin.</p></div>
+      <div class="exp"><span class="exp__n">5</span><h3>In Person</h3><p>Face-to-face counseling in Austin, valued by most current clients.</p></div>
+    </div>
+    <div class="center" style="margin-top:clamp(46px,5vw,70px)">
+      <a class="btn btn--light" href="#contact">See If the Approach Feels Right</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="about__media">
+        <img src="JB-headshot.avif" alt="James Bain, LMSW, MBA">
+      </div>
+      <div class="about__text">
+        <span class="eyebrow">The Therapist Behind the Practice</span>
+        <h2>Meet James Bain, LMSW, MBA</h2>
+        <p>James founded Therapy for the Modern Man to create a more direct, practical, and human approach to therapy. His style is active and collaborative &mdash; the goal is not to talk in circles, but to understand what is happening, name the patterns that matter, and work toward real change.</p>
+        <p>Before becoming a therapist, James spent more than a decade in technology and executive environments. That gave him firsthand familiarity with responsibility, leadership, major career decisions, and the gap that can exist between looking capable and actually feeling settled.</p>
+        <ul class="about__list">
+          <li><svg width="16" height="16" viewBox="0 0 15 15" fill="none"><path d="m3 8 3 3 6-7" stroke="#3A4D6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Austin-based therapist</li>
+          <li><svg width="16" height="16" viewBox="0 0 15 15" fill="none"><path d="m3 8 3 3 6-7" stroke="#3A4D6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Individual and group care</li>
+          <li><svg width="16" height="16" viewBox="0 0 15 15" fill="none"><path d="m3 8 3 3 6-7" stroke="#3A4D6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>In-person appointments</li>
+          <li><svg width="16" height="16" viewBox="0 0 15 15" fill="none"><path d="m3 8 3 3 6-7" stroke="#3A4D6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>LGBTQ+ and trans-affirming</li>
+          <li><svg width="16" height="16" viewBox="0 0 15 15" fill="none"><path d="m3 8 3 3 6-7" stroke="#3A4D6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Direct and collaborative</li>
+          <li><svg width="16" height="16" viewBox="0 0 15 15" fill="none"><path d="m3 8 3 3 6-7" stroke="#3A4D6E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Technology and executive background</li>
+        </ul>
+        <div class="btns"><a class="btn btn--solid" href="#contact">Meet James</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="loc">
+      <div>
+        <span class="eyebrow">Location</span>
+        <h2>In-Person Therapy in Austin</h2>
+        <p class="lede">For many people, being in the same room with their therapist matters. The practice provides in-person counseling in Austin for clients who value face-to-face conversation and a consistent space for the work.</p>
+        <div class="loc__areas">
+          <span class="tag">Austin</span>
+          <span class="tag">West Lake Hills</span>
+          <span class="tag">Dripping Springs</span>
+          <span class="tag">Buda</span>
+          <span class="tag">Greater Austin</span>
+        </div>
+        <p style="margin-top:20px;font-size:.96rem">Limited virtual sessions may also be available for clients in Texas.</p>
+      </div>
+      <div><a class="btn btn--solid" href="#contact">Schedule a Free Consultation</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSIGHTS ============ -->
+<section class="sec sand" id="insights">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow eyebrow--loud">Perspectives for Modern Life</span>
+      <h2>Therapy Is Only One Place Conversations Begin</h2>
+    </div>
+    <div class="posts">
+      <article class="post">
+        <h3>Why High-Functioning Men Stay Anxious Even When Life Looks Fine</h3>
+        <p>Success and anxiety can exist at the same time &mdash; and the signs are not always obvious.</p>
+        <a class="tlink" href="#">Read the Article <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+      <article class="post">
+        <h3>Teen Mental Health</h3>
+        <p>Perspectives for teens and parents on communication, anxiety, identity, and growing independence.</p>
+        <a class="tlink" href="#">Explore Teen Resources <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+      <article class="post">
+        <h3>Modern Masculinity, Identity &amp; Connection</h3>
+        <p>Conversations about relationships, expectations, belonging, and mental health in modern life.</p>
+        <a class="tlink" href="#">Explore Insights <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Before You Begin</span>
+      <h2>Questions People Usually Ask</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Is Therapy for the Modern Man only for men?</summary>
+        <div class="ans"><p>No. Men&rsquo;s mental health is central to the practice, but James also works with teens, LGBTQ+ and transgender clients, and other individuals who connect with his approach.</p></div>
+      </details>
+      <details>
+        <summary>What is James&rsquo;s approach to therapy?</summary>
+        <div class="ans"><p>Active, direct, practical, and collaborative. The work focuses on understanding what is happening, recognizing the patterns keeping you stuck, and finding more useful ways to respond.</p></div>
+      </details>
+      <details>
+        <summary>Do you work with teens?</summary>
+        <div class="ans"><p>Yes. James works with teens of all genders from ages 13&ndash;20.</p></div>
+      </details>
+      <details>
+        <summary>Do you offer in-person therapy?</summary>
+        <div class="ans"><p>Yes. The practice primarily provides in-person counseling in Austin. Limited virtual sessions may also be available for clients in Texas.</p></div>
+      </details>
+      <details>
+        <summary>Do I need to know exactly what I want to work on?</summary>
+        <div class="ans"><p>No. Some people begin with a very specific concern. Others simply know something feels difficult, repetitive, or no longer sustainable. Either is a reasonable place to begin.</p></div>
+      </details>
+      <details>
+        <summary>What happens when I reach out?</summary>
+        <div class="ans"><p>You can begin with a free consultation &mdash; a chance to share what brings you in, ask questions, and get a sense of whether the approach feels right.</p><p>There is no need to arrive with a diagnosis or a polished story.</p></div>
+      </details>
+      <details>
+        <summary>How do I know if James is the right therapist for me?</summary>
+        <div class="ans"><p>Credentials matter, but fit matters too. The consultation lets you experience his communication style, ask questions about the process, and decide whether you feel comfortable taking the next step.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>Start With a Conversation.</h2>
+    <p class="lede">You do not need to have everything figured out before reaching out. You may know exactly what you want to change &mdash; or simply know that something has been feeling harder than it should.</p>
+    <div class="btns">
+      <a class="btn btn--solid" href="mailto:info@modmantherapy.com">Schedule a Free Consultation</a>
+      <a class="btn btn--light" href="mailto:info@modmantherapy.com">Call &middot; Text &middot; Send a Message</a>
+    </div>
+    <p class="fine">No perfect explanation required. Start with a conversation.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <img class="foot__logo" src="https://static.wixstatic.com/media/7fd722_4b97e9d0876444bd88195a8df0fc2103~mv2.png/v1/fill/w_560,h_225,al_c,q_90,enc_auto/7fd722_4b97e9d0876444bd88195a8df0fc2103~mv2.png" alt="Therapy for the Modern Man">
+        <p>In-person therapy in Austin, Texas for men, teens, LGBTQ+ and trans clients.</p>
+        <p style="margin-top:14px"><a href="mailto:info@modmantherapy.com">info@modmantherapy.com</a></p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Individual Counseling</a></li>
+          <li><a href="#services">Teen Therapy</a></li>
+          <li><a href="#services">Men&rsquo;s Groups</a></li>
+          <li><a href="#services">LGBTQ+ Therapy</a></li>
+          <li><a href="#services">Trans-Affirming Therapy</a></li>
+          <li><a href="#services">Career Coaching</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#about">About James</a></li>
+          <li><a href="#approach">Our Approach</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Serving</h4>
+        <ul>
+          <li>Austin</li>
+          <li>West Lake Hills</li>
+          <li>Dripping Springs</li>
+          <li>Buda</li>
+          <li>Greater Austin</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar">
+      <span>&copy; 2026 Therapy for the Modern Man.</span>
+      <span>Under the No Surprises Act, you have the right to receive a Good Faith Estimate of expected charges. Ask for one at any time.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
