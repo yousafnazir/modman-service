@@ -7,7 +7,7 @@
 <meta name="description" content="One-on-one therapy for men in Austin. Direct, practical counseling for anxiety, relationships, transitions, and the sense that something is off.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --cream:#FDFBF7;
@@ -22,7 +22,7 @@
   --wrap:1280px;
   --gut:clamp(22px,5vw,64px);
   --r:16px;
-  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --display:'Instrument Serif',Georgia,'Times New Roman',serif;
   --text:'Wix Madefor Text',-apple-system,Segoe UI,Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box}
@@ -36,7 +36,7 @@ img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,h4{
   font-family:var(--display);color:var(--navy);margin:0;
-  font-variation-settings:'opsz' 120;letter-spacing:-.01em;font-weight:600;
+  letter-spacing:-.015em;font-weight:400;
 }
 h1{font-size:clamp(2.4rem,5.6vw,4.4rem);line-height:1.06;letter-spacing:-.025em}
 h2{font-size:clamp(2rem,4.4vw,3.35rem);line-height:1.1;letter-spacing:-.018em}
@@ -91,41 +91,38 @@ header{
   height:100vh;
   min-height:100vh;
   margin-top:-96px;
-  padding-top:96px;
-  box-sizing:border-box;
   display:flex;flex-direction:column;
 }
 .hero-inner{
   display:grid;
-  grid-template-columns:42px minmax(0,1fr) minmax(340px,46vw);
+  grid-template-columns:minmax(0,1fr) minmax(340px,46vw);
   flex:1;min-height:0;
+  height:100%;
   align-items:stretch;
 }
-.hero__rail{
-  writing-mode:vertical-rl;transform:rotate(180deg);
-  display:flex;align-items:center;justify-content:center;
-  font-size:.68rem;font-weight:600;letter-spacing:.38em;text-transform:uppercase;
-  color:var(--paleblue);border-right:1px solid rgba(253,251,247,.12);align-self:stretch;
-}
 .hero__copy{
-  padding:clamp(48px,7vw,90px) clamp(28px,5vw,72px);
+  padding:calc(96px + clamp(20px,3vw,36px)) clamp(28px,5vw,72px) clamp(40px,5vw,72px);
   display:flex;flex-direction:column;justify-content:center;
   max-width:760px;
+  min-height:0;
 }
 .hero .crumb,.hero .eyebrow{color:var(--paleblue)}
 .hero h1{
   color:var(--cream);margin:16px 0 24px;
   font-size:clamp(2.6rem,5.4vw,5rem);line-height:1.02;max-width:13ch;
 }
-.hero h1 em{font-style:italic;font-weight:400;color:var(--paleblue)}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--cream)}
 .hero p.lede{max-width:40ch;color:rgba(253,251,247,.82);font-size:clamp(1.05rem,1.4vw,1.2rem)}
 .hero .btns{margin-top:32px}
 .hero .btn--solid{background:var(--cream);color:var(--navy)}
 .hero .btn--solid:hover{background:#fff}
 .hero .btn--ghost{border-color:var(--cream);color:var(--cream)}
 .hero .btn--ghost:hover{background:var(--cream);color:var(--navy)}
-.hero__cut{position:relative;margin:0;min-height:0;height:100%}
-.hero__cut img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:grayscale(.15)}
+.hero__cut{position:relative;margin:0;min-height:0;height:100%;overflow:hidden}
+.hero__cut img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 18%;filter:grayscale(.15);
+}
 .hero__cut figcaption{
   position:absolute;left:18px;bottom:18px;
   font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#fff;
@@ -137,11 +134,12 @@ header{
 .crumb a:hover{text-decoration:underline}
 
 .intro{
-  display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,6vw,90px);
+  display:grid;grid-template-columns:minmax(280px,1.15fr) minmax(240px,.9fr);
+  gap:clamp(28px,5vw,72px);
   padding:clamp(56px,8vw,100px) var(--gut);max-width:1320px;margin:0 auto;align-items:end;
 }
-.intro h2{font-size:clamp(2.2rem,4vw,3.4rem);max-width:10ch}
-.intro p{font-size:1.15rem;max-width:48ch}
+.intro h2{font-size:clamp(2.2rem,4vw,3.4rem);max-width:9em;line-height:1.12}
+.intro p{font-size:1.15rem;max-width:42ch}
 
 .persona{
   display:grid;
@@ -271,8 +269,8 @@ details{border-bottom:1px solid var(--beige)}
 details:first-child{border-top:1px solid var(--beige)}
 summary{
   list-style:none;cursor:pointer;padding:26px 46px 26px 0;position:relative;
-  font-family:var(--display);font-weight:600;font-size:clamp(1.08rem,1.6vw,1.3rem);
-  color:var(--navy);line-height:1.35;
+  font-family:var(--text);font-weight:500;font-size:clamp(1.02rem,1.4vw,1.18rem);
+  color:var(--navy);line-height:1.4;letter-spacing:-.01em;
 }
 summary::-webkit-details-marker{display:none}
 summary::after{
@@ -326,9 +324,8 @@ footer h4{
     background:var(--cream);padding:20px var(--gut) 28px;border-bottom:1px solid var(--beige);gap:16px;
   }
   .burger{display:block}
-  .hero{height:auto;min-height:100vh;margin-top:-96px;padding-top:96px}
-  .hero-inner{grid-template-columns:1fr;flex:none;min-height:0}
-  .hero__rail{display:none}
+  .hero{height:auto;min-height:0;margin-top:-96px}
+  .hero-inner{grid-template-columns:1fr;flex:none;min-height:0;height:auto}
   .hero__cut{min-height:280px;height:42vh;order:-1}
   .hero__copy{padding:40px var(--gut) 56px;max-width:none}
   .intro{grid-template-columns:1fr;gap:18px;align-items:start}
@@ -348,7 +345,7 @@ footer h4{
   .nav{height:80px}
   .logo img{height:50px}
   .nav__links.is-open{top:80px}
-  .hero{margin-top:-80px;padding-top:80px}
+  .hero{margin-top:-80px}
   .hero__copy{padding:36px var(--gut) 48px}
   .hero .btns .btn,.cta .btns .btn{width:100%}
   .form .pair{grid-template-columns:1fr}
@@ -382,10 +379,8 @@ footer h4{
 
 <section class="hero" id="top">
   <div class="hero-inner">
-    <div class="hero__rail">Individual Counseling · Austin</div>
     <div class="hero__copy">
       <p class="crumb"><a href="modmantherapy-homepage-redesign-v2.html">Home</a> / Individual Counseling</p>
-      <span class="eyebrow">One-on-one work</span>
       <h1>Therapy <em>for men</em> ready to do something different</h1>
       <p class="lede">Most men who come here are functional — showing up, managing life — but carrying something they can't quite name. Individual counseling is a private space to slow down, get honest, and actually work on it. No group. No performance required.</p>
       <div class="btns">
@@ -401,7 +396,7 @@ footer h4{
 </section>
 
 <section class="intro" id="who">
-  <h2>Men at different points. The same honest work.</h2>
+  <h2>Men at different points.<br>The same honest work.</h2>
   <p>Individual counseling draws men for different reasons. A few of the most common:</p>
 </section>
 
@@ -420,7 +415,7 @@ footer h4{
 <article class="persona">
   <span class="persona__n">03</span>
   <h3>The man going through something major</h3>
-  <p>Divorce, loss, a career shift, becoming a father, leaving a faith, getting sober. Transition that's bigger than his usual coping tools can handle.</p>
+  <p>Divorce, loss, becoming a father, leaving a faith, getting sober. Transition that's bigger than his usual coping tools can handle.</p>
 </article>
 <article class="persona persona--ink">
   <div class="inner">
@@ -459,8 +454,12 @@ footer h4{
         <p>Childhood wounds, relational damage, experiences you haven't fully processed. The past has a way of running the present until you look directly at it.</p>
       </article>
       <article class="work-line">
+        <h3>Career Change, Pressure &amp; Stress</h3>
+        <p>A role that no longer fits, a leap you haven't made, or the grind of a job that looks fine from the outside. Career change, pressure, and the kind of work stress that follows you home.</p>
+      </article>
+      <article class="work-line">
         <h3>Identity &amp; Major Transitions</h3>
-        <p>Divorce, career shifts, loss, fatherhood, sobriety, leaving a faith. Moments when the old version of yourself stops working.</p>
+        <p>Divorce, loss, fatherhood, sobriety, leaving a faith. Moments when the old version of yourself stops working.</p>
       </article>
     </div>
   </div>
